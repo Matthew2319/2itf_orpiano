@@ -26,13 +26,13 @@ public function displayinfo($Name, $ID){
 
 echo "Dirctors". "<br>";
 $HR1 = new Director();
-$HR1->setName('Director Spellberg ');
+$HR1->setName('Ven Spellberg ');
 echo $HR1->getName();
 $HR1->setID(00);
 echo $HR1->getID() . "<br>";
 
 $HR2 = new Director();
-echo $HR2->displayinfo('A. Director SeeRight ',01). "<br>";
+echo $HR2->displayinfo('Adam SeeRight ',01). "<br>";
 echo "<br>";
 
 
@@ -41,6 +41,8 @@ echo "<br>";
 
 class ScriptWriter extends Director{ #Single Inheritance
 private string $Approval;
+public int $WH;
+
 public function setApproval($Approval){
     $this->Approval = $Approval;
 }
@@ -52,13 +54,15 @@ public function displayinfo($Name, $ID){
     echo $ID;
 }
 public function printinfo($Approval){
-   echo $Approval;
+    echo $Approval;
 }
+
+
 }
 
 echo "ScriptWriters". "<br>";
 $HR3 = new ScriptWriter();
-$HR3->setName('ScriptWriter Weiss ');
+$HR3->setName('Weiss Elio ');
 echo $HR3->getName();
 $HR3->setID(02);
 echo $HR3->getID();
@@ -66,7 +70,7 @@ $HR3->setApproval(' Script Denied');
 echo $HR3->getApproval(). "<br>";
 
 $HR4 = new ScriptWriter();
-echo $HR4->displayinfo('ScriptWriter Eveland ',03). $HR4->printinfo(' Script Accepted'). "<br>";
+echo $HR4->displayinfo('Yva Vellan ',03). $HR4->printinfo(' Script Accepted'). "<br>";
 echo "<br>";
 
 
@@ -95,23 +99,28 @@ echo $HR5->getID();
 $HR5->setRole(' as Bouncer #2');
 echo $HR5->getRole(). "<br>";
 
-$HR5 = new Actor();
-echo $HR5->displayinfo('Kris Phat ',05). $HR5->printAs(' as Oiram'). "<br>";
+$HR6 = new Actor();
+echo $HR6->displayinfo('Kris Phat ',05). $HR6->printAs(' as Oiram'). "<br>";
 echo "<br>";
 
 
 
 
 
-class Animator extends ScriptWriter{ #Multilevel Inheritance
-    private int $WH;
-
-    public function printinfo($WH){
-        echo $WH;
-    }
-
+class Animator extends Actor{ #Multilevel Inheritance
+    
 }
+
+echo "Animators". "<br>";
 $HR7 = new Animator();
-echo $HR7->displayinfo('Jaden Yuki ',07). $HR7->printinfo(23000). "<br>";
+$HR7->setName('Jaden Yuki ');
+echo $HR7->getName();
+$HR7->setID(06);
+echo $HR7->getID();
+$HR7->setRole(' animated Bouncer #2');
+echo $HR7->getRole(). "<br>";
+
+$HR8 = new Animator();
+echo $HR8->displayinfo('James Ode ',07). $HR8->printAs(' animated Oiram'). "<br>";
 echo "<br>";
 ?>

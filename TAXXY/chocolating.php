@@ -9,39 +9,44 @@
             $ansal = $salar * 12;
           
 
-            if ($salar <= 250000) {
+            if ($ansal <= 250000) {
                 $montax = 0;
-                $antax = $montax * 12;
+                $antax = 0;
             }
 
 
-            else if ($salar <= 400000 && $salar > 250000) {
-                $montax = $salar * 0.2;
-                $antax = $montax * 12;
+            else if ($ansal <= 400000 && $ansal > 250000) {
+                $reduce = $ansal - 250000;
+                $antax = $reduce * 0.2;
+                $montax = $antax / 12;
             }
 
 
-            else if ($salar <= 800000 && $salar > 400000) {
-                $montax = $salar * 0.25 - 30000;
-                $antax = $montax * 12;
+            else if ($ansal <= 800000 && $ansal > 400000) {
+                $reduce1 = $ansal - 400000;
+                $antax = $reduce1 * 0.25 + 30000;
+                $montax = $antax / 12;
             }
 
 
-            else if ($salar <= 2000000 && $salar > 800000) {
-                $montax = $salar * 0.3 - 130000;
-                $antax = $montax * 12;
+            else if ($ansal <= 2000000 && $ansal > 800000) {
+                $reduce2 = $ansal - 800000;
+                $antax = $reduce2 * 0.3 + 130000;
+                $montax = $antax / 12;
             }
 
 
-            else if ($salar <= 8000000 && $salar > 2000000) {
-                $montax = $salar * 0.32 - 490000;
-                $antax = $montax * 12;
+            else if ($ansal <= 8000000 && $ansal > 2000000) {
+                $reduce3 = $ansal - 2000000;
+                $antax = $reduce3 * 0.32 + 490000;
+                $montax = $antax / 12;
             }
 
 
-            else if ($salar > 8000000) {
-                $montax = $salar * 0.35 - 2410000;
-                $antax= $montax * 12;
+            else if ($ansal > 8000000) {
+                $reduce4 = $ansal - 8000000;
+                $antax = $reduce4 * 0.35 + 2410000;
+                $montax = $antax / 12;
             }  
             echo "<fieldset>". "<legend>" . " Tex Mail Surprise!~ Here's what you got". "</legend>";
             echo  "<center>" . "<font color=whitesmoke>" . "Bi-Monthly Salary: " . $selar . "<br>" ;
@@ -54,41 +59,47 @@
         
         else if ($_POST['Mon'] == "Mono"){
             $ansal = $salar * 12;
-           
+           $antax=0;
+           $montax=0;
 
-            if ($salar <= 250000) {
+            if ($ansal <= 250000) {
                 $montax = 0;
-                $antax = $montax * 12;
+                $antax = 0;
             }
 
 
-            else if ($salar <= 400000 && $salar > 250000) {
-                $montax = $salar * 0.2;
-                $antax = $montax * 12;
+            else if ($ansal <= 400000 && $ansal > 250000) {
+                $reduce = $ansal - 250000;
+                $antax = $reduce * 0.2;
+                $montax = $antax / 12;
             }
 
 
-            else if ($salar <= 800000 && $salar > 400000) {
-                $montax = $salar * 0.25 - 30000;
-                $antax = $montax * 12;
+            else if ($ansal <= 800000 && $ansal > 400000) {
+                $reduce1 = $ansal - 400000;
+                $antax = $reduce1 * 0.25 + 30000;
+                $montax = $antax / 12;
             }
 
 
-            else if ($salar <= 2000000 && $salar > 800000) {
-                $montax = $salar * 0.3 - 130000;
-                $antax = $montax * 12;
+            else if ($ansal <= 2000000 && $ansal > 800000) {
+                $reduce2 = $ansal - 800000;
+                $antax = $reduce2 * 0.3 + 130000;
+                $montax = $antax / 12;
             }
 
 
-            else if ($salar <= 8000000 && $salar > 2000000) {
-                $montax = $salar * 0.32 - 490000;
-                $antax = $montax * 12;
+            else if ($ansal <= 8000000 && $ansal > 2000000) {
+                $reduce3 = $ansal - 250000;
+                $antax = $reduce3 * 0.32 + 490000;
+                $montax = $antax / 12;
             }
 
 
-            else if ($salar > 8000000) {
-                $montax = $salar * 0.35 - 2410000;
-                $antax= $montax * 12;
+            else if ($ansal > 8000000) {
+                $reduce4 = $ansal - 8000000;
+                $antax = $reduce4 * 0.35 + 2410000;
+                $montax = $antax / 12;
             }  
 
             echo "<fieldset>". "<legend>" . "Tex Mail Surprise!~ Here's what you got". "</legend>";

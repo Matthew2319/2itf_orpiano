@@ -49,7 +49,7 @@ public function setApproval($Approval){
 public function getApproval(){
     return $this->Approval;
 }
-public function displayinfo($Name, $ID){
+public function displayinfo($Name, $ID){ #Overridding method
     echo $Name;
     echo $ID;
 }
